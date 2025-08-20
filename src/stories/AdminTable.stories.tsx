@@ -41,10 +41,6 @@ export const defaultData: Car[] = [
 
 const columnHelper = createColumnHelper<Car>();
 
-type UseSampleAdminTable = {
-  data: Car[];
-};
-
 const columns = [
   columnHelper.accessor("id", {
     cell: (info) => info.getValue(),
@@ -68,18 +64,10 @@ const columns = [
   }),
   columnHelper.accessor("price", {
     header: () => "가격",
-    cell: (info) => String(info).toLocaleString(),
+    cell: (info) => `${info.getValue().toLocaleString()} ~`,
     size: 286,
   }),
 ];
-
-const table = useReactTable<Car>({
-  data: defaultData,
-  columns,
-  getCoreRowModel: getCoreRowModel(),
-  getPaginationRowModel: getPaginationRowModel(),
-  rowCount: 10,
-});
 
 const meta = {
   title: "Example/AdminTable",
@@ -87,10 +75,18 @@ const meta = {
 } satisfies Meta<typeof AdminTable>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof AdminTable<Car>>;
 
 export const Default: Story = {
-  args: {
-    table,
+  render: () => {
+    const table = useReactTable<Car>({
+      data: defaultData,
+      columns,
+      getCoreRowModel: getCoreRowModel(),
+      getPaginationRowModel: getPaginationRowModel(),
+      rowCount: 10,
+    });
+
+    return <AdminTable table={table} />;
   },
 };
