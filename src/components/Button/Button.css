@@ -1,0 +1,71 @@
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.btn-common {
+  @apply px-4 text-sm min-w-[4rem];
+}
+
+.btn-common > span {
+  @apply font-bold leading-5;
+}
+
+.btn-size-l {
+  @apply h-12 rounded-xl;
+}
+
+.btn-size-m {
+  @apply h-9 rounded-lg;
+}
+
+.btn-size-m > span {
+  @apply text-sm;
+}
+
+.btn-size-s {
+  @apply h-7.5 rounded-lg;
+}
+
+.btn-style-default {
+  @apply bg-grey-900;
+}
+
+.btn-style-default > span {
+  @apply text-white;
+}
+
+.btn-style-outlined {
+  @apply border border-grey-300;
+}
+
+.btn-style-outlined > span {
+  @apply  text-grey-900;
+}
+
+.btn-style-outlined:disabled > span {
+  @apply text-grey-400;
+}
+
+.btn-style-filled {
+  @apply bg-grey-300 text-grey-900;
+}
+
+.btn-style-filled:disabled > span {
+  @apply text-grey-400;
+}
+
+.btn-style-text {
+  @apply bg-none text-grey-600;
+}
+
+.btn-style-text > span {
+  @apply text-grey-600;
+}
+
+.btn-style-text:disabled > span {
+  @apply text-gray-400;
+}
