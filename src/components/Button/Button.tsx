@@ -12,6 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = ({
   children,
   className,
+  onClick,
   size = "M",
   variant = "default",
   ...rest
@@ -36,11 +37,11 @@ const Button = ({
         btnSize[size.toLowerCase() as keyof typeof btnSize]
       } ${btnStyle[variant]} ${className || ""}`}
       {...rest}
-      onClick={() => alert("Hello")}
+      onClick={onClick}
     >
       <span>{children}</span>
     </button>
   );
 };
 
-export { Button };
+export default Button;
