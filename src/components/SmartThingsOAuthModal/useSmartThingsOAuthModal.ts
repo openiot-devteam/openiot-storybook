@@ -4,7 +4,7 @@ type RedirectParams = {
   redirectUri: string;
 };
 
-function useSmartThingsOAuth() {
+function useSmartThingsOAuthModal() {
   const redirect = (params: RedirectParams) => {
     // redirect url 에 지점 ID 와 maintainer id 를 포함해 전송
     const url = `https://api.smartthings.com/oauth/authorize?client_id=${params.clientId}&response_type=code&redirect_uri=${params.redirectUri}&scope=r:devices:*+w:devices:*+x:devices:*&state=${params.state}`;
@@ -16,4 +16,4 @@ function useSmartThingsOAuth() {
   };
 }
 
-export default useSmartThingsOAuth;
+export default useSmartThingsOAuthModal;

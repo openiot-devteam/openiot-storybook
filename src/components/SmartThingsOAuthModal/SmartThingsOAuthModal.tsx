@@ -1,12 +1,15 @@
 import React from "react";
 import Button from "@/components/Button/Button";
 
-interface SmartThingsOAuthProps {
+interface SmartThingsOAuthModalProps {
   onCancel: () => void;
   onConfirm: () => void;
 }
 
-function SmartThingsOAuth({ onCancel, onConfirm }: SmartThingsOAuthProps) {
+function SmartThingsOAuthModal({
+  onCancel,
+  onConfirm,
+}: SmartThingsOAuthModalProps) {
   return (
     <dialog className="modal modal-shadow rounded-lg">
       <h2 className="flex items-center p-6 text-grey-900 text-lg font-bold leading-7">
@@ -30,4 +33,4 @@ function SmartThingsOAuth({ onCancel, onConfirm }: SmartThingsOAuthProps) {
   );
 }
 
-export default SmartThingsOAuth;
+export default SmartThingsOAuthModal;

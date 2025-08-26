@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { fn } from "storybook/test";
-import SmartThingsOAuth from "@/components/SmartThingsOAuth/SmartThingsOAuth";
-import useSmartThingsOAuth from "@/components/SmartThingsOAuth/useSmartThingsOAuth";
+import SmartThingsOAuthModal from "@/components/SmartThingsOAuthModal/SmartThingsOAuthModal";
+import useSmartThingsOAuthModal from "@/components/SmartThingsOAuthModal/useSmartThingsOAuthModal";
 import { useArgs } from "storybook/internal/preview-api";
+import { useCallback } from "react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/SmartThingsOAuth",
-  component: SmartThingsOAuth,
+  title: "Example/SmartThingsOAuthModal",
+  component: SmartThingsOAuthModal,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -30,7 +31,7 @@ const meta = {
     clientId: "123",
     redirectUri: "123",
   },
-} satisfies Meta<typeof SmartThingsOAuth>;
+} satisfies Meta<typeof SmartThingsOAuthModal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -48,7 +49,18 @@ export const Default: Story = {
     const [{ state, clientId, redirectUri }, updateArgs] = useArgs();
 
     const onCancel = () => alert("연동 취소");
-    const { redirect } = useSmartThingsOAuth();
+    const { redirect } = useSmartThingsOAuthModal();
+
+    const handleRedirect = useCallback(
+      () =>
+        redirect({
+          state,
+          clientId,
+          redirectUri,
+        }),
+      [state, clientId, redirectUri]
+    );
+
     return (
       <div style={{ height: "500px", width: "500px", overflow: "auto" }}>
         {/* 테스트를 위한 파라미터 입력 필드. 컴포넌트 사용시는 SmartThingsOAuth 컴포넌트만 필요합니다 */}
@@ -72,16 +84,7 @@ export const Default: Story = {
         />
 
         {/* 이 컴포넌트와 훅만 사용하세요! */}
-        <SmartThingsOAuth
-          onCancel={onCancel}
-          onConfirm={() =>
-            redirect({
-              state,
-              clientId,
-              redirectUri,
-            })
-          }
-        />
+        <SmartThingsOAuthModal onCancel={onCancel} onConfirm={handleRedirect} />
       </div>
     );
   },
