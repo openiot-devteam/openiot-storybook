@@ -1,4 +1,4 @@
-import React, { memo, ReactNode } from "react";
+import React from "react";
 import { flexRender, Table } from "@tanstack/react-table";
 
 type TableProps<T> = {
@@ -49,9 +49,4 @@ function AdminTableComponent<T>({ table, className }: TableProps<T>) {
   );
 }
 
-// 제네릭 유지 헬퍼
-const typedMemo: <T>(
-  c: (props: TableProps<T>) => ReactNode
-) => (props: TableProps<T>) => ReactNode = memo;
-
-export default typedMemo(AdminTableComponent);
+export default AdminTableComponent;

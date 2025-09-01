@@ -6,6 +6,7 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { useMemo } from "react";
 
 type Car = {
   id: string;
@@ -79,8 +80,9 @@ type Story = StoryObj<typeof AdminTable<Car>>;
 
 export const Default: Story = {
   render: () => {
+    const data = useMemo(() => defaultData, []);
     const table = useReactTable<Car>({
-      data: defaultData,
+      data,
       columns,
       getCoreRowModel: getCoreRowModel(),
       getPaginationRowModel: getPaginationRowModel(),

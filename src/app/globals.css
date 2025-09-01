@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "../components/Button/Button.css";
 @import "../components/AdminTable/AdminTable.css";
-@import "../components/SmartThingsOAuth/SmartThingsOAuth.css";
+@import "../components/SmartThingsOAuthModal/SmartThingsOAuthModal.css";
 
 :root {
   --background: #ffffff;
