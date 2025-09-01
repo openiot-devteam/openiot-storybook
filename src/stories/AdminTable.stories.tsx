@@ -16,7 +16,7 @@ type Car = {
   price: number;
 };
 
-export const defaultData: Car[] = [
+const defaultData: Car[] = [
   {
     id: "CN7",
     name: "아반떼",

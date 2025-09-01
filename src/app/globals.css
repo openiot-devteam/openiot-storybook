@@ -2,6 +2,7 @@
 @import "../components/Button/Button.css";
 @import "../components/AdminTable/AdminTable.css";
 @import "../components/SmartThingsOAuthModal/SmartThingsOAuthModal.css";
+@import "../components/AdminDayPicker/AdminDayPicker.css";
 
 :root {
   --background: #ffffff;
