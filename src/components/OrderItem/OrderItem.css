@@ -1,0 +1,5 @@
+@layer components {
+  .order-item-container {
+    @apply flex min-w-87.5 p-4 justify-between items-center rounded-lg border border-grey-300;
+  }
+}

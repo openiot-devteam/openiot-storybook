@@ -5,6 +5,7 @@
 @import "../components/AdminDayPicker/AdminDayPicker.css";
 @import "../components/ControlCard/ControlCard.css";
 @import "../components/Badge/Badge.css";
+@import "../components/OrderItem/OrderItem.css";
 
 :root {
   --background: #ffffff;
