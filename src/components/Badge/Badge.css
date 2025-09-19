@@ -1,0 +1,17 @@
+@layer components {
+  .badge-container {
+    @apply inline-flex px-3 justify-center items-center rounded-full;
+  }
+
+  .badge-container-text {
+    @apply text-white text-[0.625rem] font-semibold leading-5;
+  }
+
+  .badge-container-inuse {
+    @apply bg-mint;
+  }
+
+  .badge-container-completed {
+    @apply bg-grey-600;
+  }
+}
