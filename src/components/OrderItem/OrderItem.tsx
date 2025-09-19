@@ -24,6 +24,11 @@ function ChevornRight() {
   );
 }
 
+const orderStatusStyle = {
+  IN_USE: "bg-white",
+  COMPLETED: "bg-grey-200",
+};
+
 function OrderItem({
   href,
   name,
@@ -31,13 +36,17 @@ function OrderItem({
   totalUsageTime,
   shopName,
   purchaseDate,
+  status,
 }: OrderItemProps) {
   return (
-    <li>
-      <Link className="order-item-container" href={href}>
+    <li className="list-none">
+      <Link
+        className={`order-item-container ${orderStatusStyle[status]}`}
+        href={href}
+      >
         <Stack className="w-full" dir="row" items="center" justify="between">
           <Stack gap={8}>
-            <UsageStatusBadge status="IN_USE" />
+            <UsageStatusBadge status={status} />
             <Stack gap={4}>
               <Stack dir="row" gap={12}>
                 <h2 className="text-grey-900 text-sm font-medium leading-5">

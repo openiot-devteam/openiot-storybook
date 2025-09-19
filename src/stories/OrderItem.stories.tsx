@@ -15,6 +15,10 @@ const meta = {
     shopName: { control: "text" },
     purchaseDate: { control: "text" },
     href: { control: "text" },
+    status: {
+      control: "select",
+      options: ["IN_USE", "COMPLETED"],
+    },
   },
 } satisfies Meta<typeof OrderItem>;
 
@@ -30,6 +34,7 @@ export const Default: Story = {
     shopName: "오픈아이오티샵",
     purchaseDate: "2024.01.15",
     href: "/order/1",
+    status: "IN_USE",
   },
 };
 
@@ -41,6 +46,7 @@ export const HighPrice: Story = {
     shopName: "프리미엄샵",
     purchaseDate: "2024.01.20",
     href: "/order/2",
+    status: "IN_USE",
   },
 };
 
@@ -52,6 +58,7 @@ export const LongUsageTime: Story = {
     shopName: "센서월드",
     purchaseDate: "2024.01.18",
     href: "/order/3",
+    status: "IN_USE",
   },
 };
 
@@ -63,6 +70,7 @@ export const ShortName: Story = {
     shopName: "간단샵",
     purchaseDate: "2024.01.22",
     href: "/order/4",
+    status: "IN_USE",
   },
 };
 
@@ -74,6 +82,32 @@ export const LongName: Story = {
     shopName: "고급 스마트홈 전문점",
     purchaseDate: "2024.01.25",
     href: "/order/5",
+    status: "IN_USE",
+  },
+};
+
+// 상태별 스토리들
+export const InUse: Story = {
+  args: {
+    name: "이용중인 디바이스",
+    price: 35000,
+    totalUsageTime: "3시간 15분",
+    shopName: "활성샵",
+    purchaseDate: "2024.01.20",
+    href: "/order/inuse",
+    status: "IN_USE",
+  },
+};
+
+export const Completed: Story = {
+  args: {
+    name: "이용 완료된 디바이스",
+    price: 50000,
+    totalUsageTime: "6시간 30분",
+    shopName: "완료샵",
+    purchaseDate: "2024.01.10",
+    href: "/order/completed",
+    status: "COMPLETED",
   },
 };
 
@@ -86,6 +120,7 @@ export const OrderList: Story = {
     shopName: "오픈아이오티샵",
     purchaseDate: "2024.01.15",
     href: "/order/1",
+    status: "IN_USE",
   },
   render: () => (
     <ul
@@ -105,6 +140,7 @@ export const OrderList: Story = {
         shopName="오픈아이오티샵"
         purchaseDate="2024.01.15"
         href="/order/1"
+        status="IN_USE"
       />
       <OrderItem
         name="프리미엄 스마트 디바이스"
@@ -113,6 +149,7 @@ export const OrderList: Story = {
         shopName="프리미엄샵"
         purchaseDate="2024.01.20"
         href="/order/2"
+        status="IN_USE"
       />
       <OrderItem
         name="스마트 센서"
@@ -121,6 +158,7 @@ export const OrderList: Story = {
         shopName="센서월드"
         purchaseDate="2024.01.18"
         href="/order/3"
+        status="COMPLETED"
       />
     </ul>
   ),
@@ -135,6 +173,7 @@ export const PriceVariations: Story = {
     shopName: "오픈아이오티샵",
     purchaseDate: "2024.01.15",
     href: "/order/1",
+    status: "IN_USE",
   },
   render: () => (
     <ul
@@ -154,6 +193,7 @@ export const PriceVariations: Story = {
         shopName="저가샵"
         purchaseDate="2024.01.10"
         href="/order/cheap"
+        status="IN_USE"
       />
       <OrderItem
         name="중간가격 디바이스"
@@ -162,6 +202,7 @@ export const PriceVariations: Story = {
         shopName="중간샵"
         purchaseDate="2024.01.12"
         href="/order/mid"
+        status="COMPLETED"
       />
       <OrderItem
         name="고가형 프리미엄"
@@ -170,6 +211,51 @@ export const PriceVariations: Story = {
         shopName="고급샵"
         purchaseDate="2024.01.14"
         href="/order/expensive"
+        status="IN_USE"
+      />
+    </ul>
+  ),
+};
+
+// 상태별 비교 스토리
+export const StatusComparison: Story = {
+  args: {
+    name: "상태 비교",
+    price: 30000,
+    totalUsageTime: "2시간",
+    shopName: "비교샵",
+    purchaseDate: "2024.01.20",
+    href: "/order/comparison",
+    status: "IN_USE",
+  },
+  render: () => (
+    <ul
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "12px",
+        listStyle: "none",
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      <OrderItem
+        name="이용중인 디바이스"
+        price={30000}
+        totalUsageTime="2시간 30분"
+        shopName="활성샵"
+        purchaseDate="2024.01.20"
+        href="/order/inuse"
+        status="IN_USE"
+      />
+      <OrderItem
+        name="이용 완료된 디바이스"
+        price={30000}
+        totalUsageTime="2시간 30분"
+        shopName="완료샵"
+        purchaseDate="2024.01.15"
+        href="/order/completed"
+        status="COMPLETED"
       />
     </ul>
   ),

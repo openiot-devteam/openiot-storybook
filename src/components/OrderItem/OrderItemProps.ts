@@ -6,4 +6,5 @@ export interface OrderItemProps extends LinkProps {
   totalUsageTime: string;
   shopName: string;
   purchaseDate: string;
+  status: "IN_USE" | "COMPLETED";
 }
