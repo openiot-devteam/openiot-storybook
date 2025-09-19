@@ -6,6 +6,7 @@
 @import "../components/ControlCard/ControlCard.css";
 @import "../components/Badge/Badge.css";
 @import "../components/OrderItem/OrderItem.css";
+@import "../components/OrderItemDetail/OrderItemDetail.css";
 
 :root {
   --background: #ffffff;
