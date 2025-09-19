@@ -17,7 +17,7 @@ function UsageStatusBadge({
   status,
 }: UsageStatusBadgeProps) {
   return (
-    <Badge className={defaultContainerStyle[status]} tabIndex={-1}>
+    <Badge className={`w-fit ${defaultContainerStyle[status]}`} tabIndex={-1}>
       {texts[status]}
     </Badge>
   );
