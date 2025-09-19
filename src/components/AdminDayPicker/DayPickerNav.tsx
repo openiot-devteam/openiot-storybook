@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import React, { useCallback } from "react";
-import ArrowLeft from "../Icons/arrow-left.svg";
+import ArrowLeft from "@/components/Icons/arrow-left.svg";
 import { NavProps, useDayPicker } from "react-day-picker";
 
 function DayPickerNav({
@@ -20,7 +20,7 @@ function DayPickerNav({
         onNextClick?.(e);
       }
     },
-    [nextMonth, onNextClick],
+    [nextMonth, onNextClick]
   );
 
   const handlePreviousClick = useCallback(
@@ -29,9 +29,8 @@ function DayPickerNav({
         onPreviousClick?.(e);
       }
     },
-    [previousMonth, onPreviousClick],
+    [previousMonth, onPreviousClick]
   );
-;
   return (
     <nav {...navProps}>
       <div className="flex gap-2 items-center">
