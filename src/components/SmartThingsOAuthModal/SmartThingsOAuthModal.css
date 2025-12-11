@@ -1,7 +1,0 @@
-.modal {
-    @apply fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  flex flex-col w-120;
-  }
-
-.modal-shadow {
-box-shadow: 0 0 2px 0 rgba(17, 17, 31, 0.08), -40px 40px 80px -8px rgba(17, 17, 31, 0.24);
-}
