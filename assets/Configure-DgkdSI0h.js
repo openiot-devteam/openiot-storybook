@@ -1,3 +1,0 @@
-import{j as n}from"./jsx-runtime-CT2iHJ59.js";import{useMDXComponents as r}from"./index-DJKaN1Zu.js";import{a as s}from"./ColorsPalette-s2OEN-Su.js";import"./iframe-CgDJCaGe.js";import"./preload-helper-PPVm8Dsz.js";function e(t){const o={h1:"h1",p:"p",...r(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(o.h1,{id:"색상-팔레트",children:"색상 팔레트"}),`
-`,n.jsx(o.p,{children:"아래는 디자인 시스템에 정의된 색상 팔레트입니다. 각 카드는 색상의 토큰 이름에 대응되는 배경색을 보여줍니다."}),`
-`,n.jsx(s,{})]})}function x(t={}){const{wrapper:o}={...r(),...t.components};return o?n.jsx(o,{...t,children:n.jsx(e,{...t})}):e(t)}export{x as default};
