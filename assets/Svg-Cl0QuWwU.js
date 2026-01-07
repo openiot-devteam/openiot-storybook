@@ -1,1 +1,0 @@
-import{j as i}from"./jsx-runtime-wejb5_g7.js";function n({...e}){return i.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",...e,children:e.children})}n.__docgenInfo={description:"",methods:[],displayName:"SVG"};export{n as S};
